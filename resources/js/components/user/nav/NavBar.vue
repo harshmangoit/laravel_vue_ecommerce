@@ -33,8 +33,8 @@ const searchOnEnter = () => {
 };
 </script>
 <template>
-    <div class="v-container">
-        <nav class="h-full navbar-grid py-4">
+    <v-container>
+        <nav class="h-full navbar-grid">
             <div style="grid-area: logo" class="flex justify-center">
                 <TheLogo />
             </div>
@@ -52,34 +52,26 @@ const searchOnEnter = () => {
             >
                 <!-- <NavPrimary class="md:w-full" /> -->
             </div>
-            <!-- <div
-                data-pg-name="Searchbox"
-                style="flex-grow: 1;"
-                class="flex items-center w-20"
-            > -->
-                <!-- <v-form class="w-full"> -->
-                <v-text-field
-                    v-model="searchText"
-                    @keyup.enter="searchOnEnter"
-                    label="Search..."
-                    append-inner-icon="i-material-symbols-search-rounded"
-                    hide-details
-                    variant="outlined"
-                    class="w-full h-1s"
-                    style="width: 25pc;"
-                ></v-text-field>
-                <!-- </v-form> -->
-            <!-- </div> -->
-            <div
-                data-pg-name="Profile"
-                class="flex md:items-center"
-            >
-                <ProfileActions class="hidden md:flex" />
+            <v-text-field
+                v-model="searchText"
+                @keyup.enter="searchOnEnter"
+                label="Search..."
+                append-inner-icon="i-material-symbols-search-rounded"
+                hide-details
+                variant="outlined"
+                class="w-full h-1s"
+                style="width: 25pc"
+            ></v-text-field>
+            <div data-pg-name="Profile" class="flex md:items-center">
                 <router-link to="/login"
-                    ><v-btn v-if="!authStore.isLoggedIn" variant="tonal" class="ml-3"
+                    ><v-btn
+                        v-if="!authStore.isLoggedIn"
+                        variant="tonal"
+                        class="ml-3"
                         >Sign In</v-btn
                     ></router-link
                 >
+
                 <v-menu>
                     <template #activator="{ props }">
                         <v-btn
@@ -93,11 +85,6 @@ const searchOnEnter = () => {
                             icon
                         >
                             <v-icon size="large">mdi-account</v-icon>
-                            <!-- <v-avatar
-                                alt="Avatar"
-                                image=""
-                                size="large"
-                            ></v-avatar> -->
                         </v-btn>
                     </template>
                     <v-card min-width="300">
@@ -112,7 +99,7 @@ const searchOnEnter = () => {
                                         @click="logout"
                                         class="font-bold my-4 w-fit md:my-2"
                                         >Logout</v-btn
-                                        >
+                                    >
                                 </div>
                             </v-list-item>
                         </v-list>
@@ -121,6 +108,7 @@ const searchOnEnter = () => {
                         </v-list>
                     </v-card>
                 </v-menu>
+                <ProfileActions class="hidden md:flex ml-2" />
             </div>
         </nav>
         <v-navigation-drawer
@@ -134,7 +122,7 @@ const searchOnEnter = () => {
         >
             <NavPrimary class="m-4" />
         </v-navigation-drawer>
-    </div>
+    </v-container>
 </template>
 <style scoped>
 .navbar-grid {
@@ -142,7 +130,7 @@ const searchOnEnter = () => {
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
-    background-color: #fff; 
+    background-color: #fff;
 }
 @media (min-width: 768px) {
     .navbar-grid {

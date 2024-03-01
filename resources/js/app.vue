@@ -1,11 +1,10 @@
 <template>
-    <div>
+    <v-container>
         <router-view></router-view>
-    </div>
+    </v-container>
 </template>
 
-<script setup>
-</script>
+<script setup></script>
 
 <style>
 /* @import "bootstrap";

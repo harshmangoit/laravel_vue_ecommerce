@@ -1,5 +1,5 @@
 <script setup>
-import ProductCard from "../../components/user/ProductCard.vue"
+import ProductCard from "../../components/user/ProductCard.vue";
 import { ref, onMounted } from "vue";
 import axios from "axios";
 import bus from "../../plugins/eventBus";
@@ -45,21 +45,34 @@ onMounted(fetchProducts);
 </script>
 <template>
     <div>
-        <v-container class="py-8">
-            <div class="-tracking-wide flex font-bold justify-center text-3xl">
-                <span class="text-center  text-primary">Latest Products 🔥</span>
-            </div>
-            <section
-                data-pg-name="Products"
-                class="flex flex-wrap justify-center mt-8"
-            >
-                <ProductCard
-                    v-for="(product, index) in products"
-                    :key="index"
-                    v-bind="product"
-                />
-            </section>
-        </v-container>
+        <div class="-tracking-wide flex font-bold justify-center text-3xl">
+            <span class="text-center text-primary">Latest Products 🔥</span>
+        </div>
+        <section data-pg-name="Products" class="flex flex-wrap justify-center">
+            <ProductCard
+                v-for="(product, index) in products"
+                :key="index"
+                v-bind="product"
+            />
+        </section>
     </div>
 </template>
-<style scoped></style>
+
+<style scoped>
+/* Your existing styles */
+.flex {
+    display: flex;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+/* Additional styles for responsiveness */
+@media screen and (max-width: 768px) {
+    .flex-wrap {
+        flex-wrap: nowrap; /* Prevent wrapping on smaller screens */
+        overflow-x: auto; /* Add horizontal scrollbar for overflow */
+    }
+}
+</style>

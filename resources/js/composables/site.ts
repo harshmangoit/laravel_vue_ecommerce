@@ -58,13 +58,19 @@ export default {
             text: "My Profile",
             link: "/profile",
             type: "secondary",
-            icon: "i-ic-baseline-history",
+            icon: "mdi-account",
+        },
+        {
+            text: "My Wishlists",
+            link: "/wishlist",
+            type: "secondary",
+            icon: "mdi-heart",
         },
         {
             text: "My Orders",
             link: "/orders",
             type: "secondary",
-            icon: "i-ic-baseline-history",
+            icon: "mdi-package-variant",
         },
         // {
         //   text: 'Track Order',

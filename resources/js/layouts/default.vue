@@ -8,22 +8,17 @@ import TheFooter from "../components/user/TheFooter.vue";
 /* Update on using the above technique - We now use SSR HTTP Client hints technique instead of the above - https://vuetify-nuxt-module.netlify.app/guide/server-side-rendering.html#ssr-http-client-hints */
 </script>
 <template>
-    <div>
-        <!-- <div class="container mx-auto"> -->
-        <v-app
-            class="min-h-screen bg-white dark:bg-neutral-950 text-neutral-900 dark:text-neutral-50"
-        >
-            <!-- <v-app :theme="isDark ? 'dark' : 'light'"> -->
-            <NavBar />
-          
-            <v-main class="py-2">
-                <router-view></router-view>
-            </v-main>
-            <!-- https://vuetifyjs.com/en/features/application-layout/-->
-            <TheFooter />
-        </v-app>
+    <v-app
+        class="min-h-screen bg-white dark:bg-neutral-950 text-neutral-900 dark:text-neutral-50"
+    >
+        <!-- <v-app :theme="isDark ? 'dark' : 'light'"> -->
+        <NavBar />
 
-        <!-- </div> -->
-    </div>
+        <v-main class="py-2">
+            <router-view></router-view>
+        </v-main>
+        <!-- https://vuetifyjs.com/en/features/application-layout/-->
+        <TheFooter />
+    </v-app>
 </template>
 <style></style>
